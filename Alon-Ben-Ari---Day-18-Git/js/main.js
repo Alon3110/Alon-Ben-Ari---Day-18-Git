@@ -3,8 +3,11 @@
 var clickCounter = 0
 var ballHeight = 50
 var ballWidth = 50
+var gInterval
 
 function onInIt() {
+
+    clearInterval(gInterval)
     clickCounter = 0
     document.querySelector('h2 span').innerText = clickCounter
     document.querySelector('body').style.backgroundColor = 'black'
@@ -16,6 +19,7 @@ function onInIt() {
     document.querySelector('.ball2').style.height = 100 + 'px'
     document.querySelector('.ball2').style.width = 100 + 'px'
     document.querySelector('.ball2').innerText = '100'
+    startTimer()
 }
 
 function onBallClick(elBall, maxDiameter) {
@@ -86,4 +90,26 @@ function onBallClickBackground() {
     document.querySelector('body').style.backgroundColor = randomColor
     clickCounter++
     document.querySelector('h2 span').innerText = clickCounter
+}
+
+function startTimer() {
+
+    var startTime = Date.now()
+    clearInterval(gInterval)
+
+    gInterval = setInterval(function () {
+        var now = Date.now()
+        var diff = now - startTime
+
+        var secs = Math.floor(diff / 1000)
+        var min = Math.floor(secs / 60)
+        var secsForDisplay = secs % 60
+
+        if (secsForDisplay < 10) secsForDisplay = '0' + secsForDisplay
+        if (min < 10) min = '0' + min
+
+        document.querySelector('.timer .min').innerText = min
+        document.querySelector('.timer .sec').innerText = secsForDisplay
+    }, 50)
+
 }
