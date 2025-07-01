@@ -1,9 +1,12 @@
 'use strict'
 
+var clickCounter = 0
 var ballHeight = 50
 var ballWidth = 50
 
 function onInIt() {
+    clickCounter = 0
+    document.querySelector('h2 span').innerText = clickCounter
     document.querySelector('body').style.backgroundColor = 'black'
     document.querySelector('.ball').style.backgroundColor = 'rgb(83, 241, 252)'
     document.querySelector('.ball2').style.backgroundColor = 'rgb(94, 234, 52)'
@@ -30,7 +33,7 @@ function onBallClick(elBall, maxDiameter) {
     elBall.style.height = ballHeight + randomInt + 'px'
     elBall.style.width = ballWidth + randomInt + 'px'
     elBall.innerText = sum
-
+    
     if (sum > maxDiameter) {
         ballHeight = 50
         ballWidth = 50
@@ -38,6 +41,8 @@ function onBallClick(elBall, maxDiameter) {
         elBall.style.width = 100 + 'px'
         elBall.innerText = '100'
     }
+    clickCounter++
+    document.querySelector('h2 span').innerText = clickCounter
 }
 
 function onBalls() {
@@ -45,8 +50,11 @@ function onBalls() {
     const elBall1 = document.querySelector('.ball')
     const elBall2 = document.querySelector('.ball2')
 
-    onBallClick(elBall1, 400)
-    onBallClick(elBall2, 300)
+    onBallClick(elBall1, 500)
+    onBallClick(elBall2, 400)
+    clickCounter--
+    document.querySelector('h2 span').innerText = clickCounter
+
 }
 
 function reduceDiameter() {
@@ -68,9 +76,14 @@ function reduceDiameter() {
     elBall2.style.width = size2 + 'px'
     elBall2.style.height = size2 + 'px'
     elBall2.innerText = size2 === 100 ? '100' : size2 * 2
+    clickCounter++
+    document.querySelector('h2 span').innerText = clickCounter
+
 }
 
 function onBallClickBackground() {
     var randomColor = getRandomColor()
     document.querySelector('body').style.backgroundColor = randomColor
+    clickCounter++
+    document.querySelector('h2 span').innerText = clickCounter
 }
