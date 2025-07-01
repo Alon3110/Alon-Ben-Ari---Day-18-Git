@@ -1,7 +1,7 @@
 'use strict'
 
-var ballHeight = 100
-var ballWidth = 100
+var ballHeight = 50
+var ballWidth = 50
 
 
 
@@ -40,22 +40,26 @@ function onBalls() {
 }
 
 function reduceDiameter() {
+    var elBall1 = document.querySelector('.ball')
+    var elBall2 = document.querySelector('.ball2')
 
-    const elBall1 = document.querySelector('.ball')
-    const elBall2 = document.querySelector('.ball2')
+    var rand = getRandomInt(20, 60)
 
-    var randomInt = getRandomInt(20, 60)
+    var size1 = parseInt(getComputedStyle(elBall1).width) - rand
+    var size2 = parseInt(getComputedStyle(elBall2).width) - rand
 
+    if (size1 < 100) size1 = 100
+    if (size2 < 100) size2 = 100
 
-    const sum = ballHeight + ballWidth
-    if (sum > 200) {
-        elBall1.style.height = ballHeight - randomInt + 'px'
-        elBall2.style.height = ballHeight - randomInt + 'px'
+    elBall1.style.width = size1 + 'px'
+    elBall1.style.height = size1 + 'px'
+    elBall1.innerText = size1 === 100 ? '100' : size1 * 2
 
-        elBall1.style.width = ballWidth - randomInt + 'px'
-        elBall2.style.width = ballWidth - randomInt + 'px'
- 
-    }
-
-
+    elBall2.style.width = size2 + 'px'
+    elBall2.style.height = size2 + 'px'
+    elBall2.innerText = size2 === 100 ? '100' : size2 * 2
 }
+
+// function onBallClickBackground() {
+
+// }
