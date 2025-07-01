@@ -7,11 +7,15 @@ var ballWidth = 50
 
 function onBallClick() {
 
+    var randomColor = getRandomColor()
     var randomInt = getRandomInt(20, 60)
+
     const elBall = document.querySelector('.ball')
     ballHeight += randomInt
     ballWidth += randomInt
-
+    
+    elBall.style.backgroundColor = randomColor
+    
     const sum = ballHeight + ballWidth
 
     elBall.style.height = ballHeight + randomInt + 'px'
