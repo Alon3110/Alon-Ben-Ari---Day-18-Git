@@ -62,7 +62,7 @@ body {
     transition: all 1s ease-in-out;
 }
 
-/* .ball5 {
+.ball5 {
     display: flex;
     margin: 100px auto;
     width: 100px;
@@ -75,4 +75,4 @@ body {
     justify-content: center;
     align-items: center;
     transition: all 1s ease-in-out;
-} */
+}

@@ -60,6 +60,7 @@ function reduceDiameter() {
     elBall2.innerText = size2 === 100 ? '100' : size2 * 2
 }
 
-// function onBallClickBackground() {
-
-// }
+function onBallClickBackground() {
+    var randomColor = getRandomColor()
+    document.querySelector('body').style.backgroundColor = randomColor
+}
