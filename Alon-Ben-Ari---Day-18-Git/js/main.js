@@ -5,12 +5,11 @@ var ballWidth = 50
 
 
 
-function onBallClick() {
+function onBallClick(elBall, maxDiameter) {
 
     var randomColor = getRandomColor()
     var randomInt = getRandomInt(20, 60)
 
-    const elBall = document.querySelector('.ball')
     ballHeight += randomInt
     ballWidth += randomInt
     
@@ -22,7 +21,7 @@ function onBallClick() {
     elBall.style.width = ballWidth + randomInt + 'px'
     elBall.innerText = sum
 
-    if (sum > 400) {
+    if (sum > maxDiameter) {
         ballHeight = 50
         ballWidth = 50
         elBall.style.height = 100 + 'px'
