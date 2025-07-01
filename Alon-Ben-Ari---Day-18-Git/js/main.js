@@ -1,7 +1,7 @@
 'use strict'
 
-var ballHeight = 50
-var ballWidth = 50
+var ballHeight = 100
+var ballWidth = 100
 
 
 
@@ -12,9 +12,9 @@ function onBallClick(elBall, maxDiameter) {
 
     ballHeight += randomInt
     ballWidth += randomInt
-    
+
     elBall.style.backgroundColor = randomColor
-    
+
     const sum = ballHeight + ballWidth
 
     elBall.style.height = ballHeight + randomInt + 'px'
@@ -28,4 +28,34 @@ function onBallClick(elBall, maxDiameter) {
         elBall.style.width = 100 + 'px'
         elBall.innerText = '100'
     }
+}
+
+function onBalls() {
+
+    const elBall1 = document.querySelector('.ball')
+    const elBall2 = document.querySelector('.ball2')
+
+    onBallClick(elBall1, 400)
+    onBallClick(elBall2, 300)
+}
+
+function reduceDiameter() {
+
+    const elBall1 = document.querySelector('.ball')
+    const elBall2 = document.querySelector('.ball2')
+
+    var randomInt = getRandomInt(20, 60)
+
+
+    const sum = ballHeight + ballWidth
+    if (sum > 200) {
+        elBall1.style.height = ballHeight - randomInt + 'px'
+        elBall2.style.height = ballHeight - randomInt + 'px'
+
+        elBall1.style.width = ballWidth - randomInt + 'px'
+        elBall2.style.width = ballWidth - randomInt + 'px'
+ 
+    }
+
+
 }

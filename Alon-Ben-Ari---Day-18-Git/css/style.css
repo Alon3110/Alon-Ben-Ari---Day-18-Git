@@ -31,3 +31,33 @@ body {
     align-items: center;
     transition: all 1s ease-in-out;
 }
+
+.ball3 {
+    display: flex;
+    margin: 100px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(94, 234, 52);
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.ball4 {
+    display: flex;
+    margin: 100px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(185, 214, 177);
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
