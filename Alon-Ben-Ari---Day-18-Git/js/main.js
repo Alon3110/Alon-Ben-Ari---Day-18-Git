@@ -3,7 +3,17 @@
 var ballHeight = 50
 var ballWidth = 50
 
-
+function onInIt() {
+    document.querySelector('body').style.backgroundColor = 'black'
+    document.querySelector('.ball').style.backgroundColor = 'rgb(83, 241, 252)'
+    document.querySelector('.ball2').style.backgroundColor = 'rgb(94, 234, 52)'
+    document.querySelector('.ball').style.height = 100 + 'px'
+    document.querySelector('.ball').style.width = 100 + 'px'
+    document.querySelector('.ball').innerText = '100'
+    document.querySelector('.ball2').style.height = 100 + 'px'
+    document.querySelector('.ball2').style.width = 100 + 'px'
+    document.querySelector('.ball2').innerText = '100'
+}
 
 function onBallClick(elBall, maxDiameter) {
 
