@@ -3,11 +3,15 @@ body {
 }
 
 .ball {
+    display: flex;
     margin: auto;
-    color: white;
-    text-align: center;
-    background-color: rgb(83, 241, 252);
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(83, 241, 252);
+    justify-content: center;
+    align-items: center;
 }
